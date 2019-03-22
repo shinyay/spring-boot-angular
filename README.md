@@ -15,6 +15,13 @@ Overview
 
 ## Usage
 
+### Build Angular CLI Docker image
+
+```
+$ docker build -t angular:7.3.6 .
+```
+
+
 ## Installation
 
 ## Licence
