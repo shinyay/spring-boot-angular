@@ -18,6 +18,14 @@ Overview
 ### Build Angular CLI Docker image
 
 ```
+FROM node:10.15-stretch
+
+RUN npm install -g @angular/cli@7.3.6
+
+WORKDIR /app
+```
+
+```
 $ docker build -t angular:7.3.6 .
 ```
 
