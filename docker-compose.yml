@@ -1,0 +1,11 @@
+version: "3"
+services:
+  client:
+    image: angular:7.3.6
+    build: .
+    command: bash -c "npm install && ng serve --host 0.0.0.0"
+    volumes:
+      - ./angularclient:/app
+      - /app/node_modules/
+    ports:
+      - "4200:4200"
