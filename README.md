@@ -17,6 +17,8 @@ Overview
 
 ### Build Angular CLI Docker image
 
+- `$ vim Dockerfile`
+
 ```
 FROM node:10.15-stretch
 
@@ -29,6 +31,27 @@ WORKDIR /app
 $ docker build -t angular:7.3.6 .
 ```
 
+### Run Angular App from Docker image
+
+- `$ vim docker-compose.yml`
+
+```
+version: "3"
+services:
+  client:
+    image: angular:7.3.6
+    build: .
+    command: bash -c "npm install && ng serve --host 0.0.0.0"
+    volumes:
+      - ./angularclient:/app
+      - /app/node_modules/
+    ports:
+      - "4200:4200"
+```
+
+```
+$ docker-compose up
+```
 
 ## Installation
 
